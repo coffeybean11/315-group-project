@@ -43,4 +43,4 @@ On what characteristics do the Airbnb's differ across European cities?
 What is the association between whether or not it is a weekend and the price for Airbnb's in European cities?
 
 
- hi stotra
+ hi jackson

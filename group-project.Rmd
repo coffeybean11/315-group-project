@@ -8,8 +8,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-
+ 
 ```{r}
 library(readr)
 merged_airbnb <- read_csv("~/Documents/36315/merged_airbnb.csv", show_col_types = FALSE)

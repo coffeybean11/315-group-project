@@ -1,0 +1,46 @@
+---
+title: "315-group-project"
+author: "Jackson Meehan, Jacob Coffey, Esha Gupta, Stotra Pandya"
+date: '2023-05-01'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(readr)
+merged_airbnb <- read_csv("~/Documents/36315/merged_airbnb.csv", show_col_types = FALSE)
+```
+
+```{r}
+library(tidyverse)
+
+cheaper_airbnbs = subset(merged_airbnb, realSum < quantile(merged_airbnb$realSum, probs = .9))
+
+cheaper_airbnbs %>%
+  ggplot(aes(x = dist, y = realSum)) +
+  facet_wrap(city ~ .) + 
+  geom_point(alpha = 0.3) +
+  geom_smooth(method="loess", se=TRUE) +
+  labs(title="Distance From Center City vs. Price of Airbnb in Different European Cities",
+       x = "Distance From Center City", y="Price of Airbnb Listing")
+```
+
+# research questions
+
+## RQ1
+
+How does the relationship between different variables and price and the relationship between different variables and guest satisfaction differ between cities in Europe?
+
+## RQ2
+
+On what characteristics do the Airbnb's differ across European cities?
+
+## RQ3
+
+What is the association between whether or not it is a weekend and the price for Airbnb's in European cities?
+
+
